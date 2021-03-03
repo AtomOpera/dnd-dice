@@ -24,18 +24,25 @@ export default function App() {
   const [minMax, setMinMax] = useState(0);
   const [average, setAverage] = useState(0);
 
+  useEffect(() => {
+    // Update the document when first open
+    getStats();
+  });
+
   // function handleChange(event) {
   //   setDice(event.target.value);
   // }
 
-  function handleSubmit(event) {
-    // if (!plus) {setPlus=0;}
+  function getStats() {
     const min= 1 + parseInt(plus);
     const max= parseInt(dice) + parseInt(plus);
     const average= (min+max)/2;
-    setResult((Math.floor(Math.random() * dice) + 1)+ parseInt(plus));
     setMinMax(`${min}-${max}`);
     setAverage(average);
+  }
+
+  function handleSubmit(event) {
+    setResult((Math.floor(Math.random() * dice) + 1)+ parseInt(plus));
     // alert('Your favorite flavor is: ' + dice);
     event.preventDefault();
   }
@@ -49,7 +56,10 @@ export default function App() {
         {/* <RowContainer> */}
              <select 
               value={diceNumber} 
-              onChange={(e) => {setDiceNumber(e.target.value)}}
+              onChange={(e) => {
+                setDiceNumber(e.target.value);
+                getStats();
+              }}
               style={{padding:"6px"}}
             >
 
@@ -64,7 +74,10 @@ export default function App() {
             {"dice of "} 
             <select 
               value={dice} 
-              onChange={(e) => {setDice(e.target.value)}}
+              onChange={(e) => {
+                setDice(e.target.value);
+                getStats();
+              }}
               style={{padding:"6px"}}
             >
 
@@ -79,7 +92,10 @@ export default function App() {
           {"+ "} 
           <select 
               value={plus} 
-              onChange={(e) => {setPlus(e.target.value || 0)}}
+              onChange={(e) => {
+                setPlus(e.target.value || 0);
+                getStats();
+              }}
               style={{padding:"6px"}}
             >
               <option value="0">0</option>
