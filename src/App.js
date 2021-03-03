@@ -77,13 +77,35 @@ export default function App() {
             </select>
           </label>
           {"+ "} 
-          <input 
+          <select 
+              value={plus} 
+              onChange={(e) => {setPlus(e.target.value || 0)}}
+              style={{padding:"6px"}}
+            >
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          {/* <input 
             type="text" 
             placeholder="1 for example" 
             onChange={(e) => {setPlus(e.target.value || 0)}}
             style={{padding:"6px"}} 
-          />
-          <input type="submit" value="Submit" style={{padding:"6px"}} />
+          /> */}
+          <input type="submit" value="Roll" style={{padding:"6px"}} />
           {/* </RowContainer> */}
         </form>
       
