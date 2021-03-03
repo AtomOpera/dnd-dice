@@ -105,6 +105,7 @@ export default function App() {
             onChange={(e) => {setPlus(e.target.value || 0)}}
             style={{padding:"6px"}} 
           /> */}
+          {" "}
           <input type="submit" value="Roll" style={{padding:"6px"}} />
           {/* </RowContainer> */}
         </form>
