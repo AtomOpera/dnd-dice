@@ -1,0 +1,11 @@
+---
+application:
+  name: "dnd-dice"
+  project: "express-api"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-dnd-dice"
+  routes:
+  - application_name: "dnd-dice"
+    paths:
+    - "/*"
