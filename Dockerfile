@@ -1,7 +1,10 @@
-FROM node:13-alpine
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+FROM node:8 as react-build
+WORKDIR /app
 COPY . .
-RUN npm install
-EXPOSE 3000
-CMD node ./bin/www
+RUN yarn
+RUN yarn build
+
+FROM nginx:alpine
+COPY --from=react-build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

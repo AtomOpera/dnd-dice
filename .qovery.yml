@@ -1,7 +1,7 @@
 ---
 application:
   name: "dnd-dice"
-  project: "express-api"
+  project: "dnd-dice"
   organization: "QoveryCommunity"
 routers:
 - name: "main-dnd-dice"
