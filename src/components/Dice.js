@@ -211,7 +211,7 @@ export default function Dice() {
         {result &&
           result.map((r, i) => (
             <div key={`${r}${i}`}>
-              {`${i + 1}:`}
+              {`Result ${i + 1}:`}
               {`[${diceArr[i].toString()}]+${plus}=`}
               <b>{`${r}`}</b>
             </div>

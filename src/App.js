@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Dice from "./components/Dice";
 
 export default function App() {
@@ -6,8 +5,11 @@ export default function App() {
     <div className="App">
       {/* <ColumnnContainer> */}
       <h1>D&D Dice</h1>
-      <Dice key="one"/>
-      <Dice key="two"/>
+      <br />
+      <br />
+      <br />
+      <Dice key="one" />
+      <Dice key="two" />
     </div>
   );
 }
